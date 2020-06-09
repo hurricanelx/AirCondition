@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Register</title>
+  <!-- Link CSS -->
+    {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<form class="form-signin" name="info" action="/register_/" method="get">
+			<h2 class="form-signin-heading text-center">Register</h2>
+
+			    <input type="text" class="form-control" name="name" placeholder="输入账号">
+			    <input type="text" class="form-control" name="password" placeholder="输入密码">
+                <input type="text" class="form-control" name="user_type" placeholder="输入用户类型">
+
+			    <button type="submit" class="btn btn-lg btn-primary btn-block">注  册</button>
+
+                <h6>{{ result }}</h6>
+        </form>
+	</div>
+</body>
+</html>
