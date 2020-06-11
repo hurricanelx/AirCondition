@@ -2,11 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer</title>
+    <title>CustomerWel</title>
+    <meta http-equiv="refresh" content="20">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+    .table11_6 table {
+        width:100%;
+        margin:15px 0;
+        border:0;
+    }
+    .table11_6 th {
+        background-color:#96C7ED;
+        color:#000000
+    }
+    .table11_6,.table11_6 th,.table11_6 td {
+        font-size:1.35em;
+        text-align:center;
+        padding:4px;
+        border-collapse:collapse;
+    }
+    .table11_6 th,.table11_6 td {
+        border: 1px solid #73b4e7;
+        border-width:1px 0 1px 0;
+        border:2px inset #ffffff;
+    }
+    .table11_6 tr {
+        border: 1px solid #ffffff;
+    }
+    .table11_6 tr:nth-child(odd){
+        background-color:#dcecf9;
+    }
+    .table11_6 tr:nth-child(even){
+        background-color:#ffffff;
+    }
+</style>
+
 </head>
 <body>
-    <h3>
-        This is Customer init
-    </h3>
+<table class="table11_6" align="center">
+    <tr>
+        <td>    房间信息    </td>
+        <td>    用户信息    </td>
+        <td>    缺省工作温度    </td>
+        <td>    当前温度    </td>
+        <td>    目标温度    </td>
+    </tr>
+    <tr>
+        <td>    {{ room_number }}   </td>
+        <td>    {{ user_id }},  {{ user_name }}  </td>
+        <td>    {{ que_temp }}   </td>
+        <td>    {{ now_temp }}   </td>
+        <td>    {{ target_temp }}   </td>
+    </tr>
+</table>
+
+<br/>
+<br>
+
+<div class="toggle-button-wrapper" align="center">
+    <form method="get" action="on" >
+        <button type="submit" name="switch" value="switch"> 开关 </button>
+    </form>
+</div>
+
+<div class="wrapper">
+    <form class="form-signin" name="info" action="setTemp" method="get">
+        <h4 class="form-signin-heading text-center">温度设置</h4>
+
+        <input type="text" class="form-control" name="tempreture" placeholder="输入温度">
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+        <h6>{{ result_temp }}</h6>
+    </form>
+
+    <form class="form-signin" name="info" action="setWind" method="get">
+        <h4 class="form-signin-heading text-center">风速设置</h4>
+
+        <input type="text" class="form-control" name="windSpeed" placeholder="输入风速">
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+        <h6>{{ result_wind }}</h6>
+    </form>
+
+    <form class="form-signin" name="info" action="setMode" method="get">
+        <h4 class="form-signin-heading text-center">模式设置</h4>
+
+        <input type="text" class="form-control" name="mode" placeholder="输入模式">
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+        <h6>{{ result_mode }}</h6>
+    </form>
+
+    <form class="form-signin" name="info" action="queryPost" method="get">
+        <h4 class="form-signin-heading text-center">报表生成</h4>
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">生 成</button>
+
+    </form>
+</div>
+
 </body>
 </html>

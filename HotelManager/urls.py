@@ -7,5 +7,6 @@ urlpatterns = [
     path('queryPost', views.queryPost),
     path('setPrice', views.setPrice),
     path('setTemp', views.setTemp),
+    path('data', views.data, name='data'),
     path('', views.welcome),
 ]

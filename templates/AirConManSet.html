@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirConManSet</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+
+<br/>
+<br/>
+<h2 class="form-signin-heading text-center">欢迎，空调管理员</h2>
+	<div class="wrapper">
+		<form class="form-signin" name="info" action="setTemp" method="get">
+            <h4 class="form-signin-heading text-center">温度设置</h4>
+
+            <input type="text" class="form-control" name="name" placeholder="输入用户">
+            <input type="text" class="form-control" name="tempreture" placeholder="输入温度">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+            <h6>{{ result_temp }}</h6>
+        </form>
+
+        <form class="form-signin" name="info" action="setPrice" method="get">
+            <h4 class="form-signin-heading text-center">计费参数设置</h4>
+
+            <input type="text" class="form-control" name="name" placeholder="输入用户">
+            <input type="text" class="form-control" name="price" placeholder="输入计费参数">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+            <h6>{{ result_price }}</h6>
+        </form>
+
+        <form class="form-signin" name="info" action="setMode" method="get">
+            <h4 class="form-signin-heading text-center">工作模式设置</h4>
+
+            <input type="text" class="form-control" name="name" placeholder="输入用户">
+            <input type="text" class="form-control" name="mode" placeholder="输入工作模式">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+            <h6>{{ result_mode }}</h6>
+        </form>
+
+        <form class="form-signin" name="info" action="setFrequency" method="get">
+            <h4 class="form-signin-heading text-center">刷新频率设置</h4>
+
+            <input type="text" class="form-control" name="name" placeholder="输入用户">
+            <input type="text" class="form-control" name="price" placeholder="输入刷新频率">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
+
+            <h6>{{ result_frequency }}</h6>
+        </form>
+	</div>
+
+
+
+
+
+</body>
+</html>
