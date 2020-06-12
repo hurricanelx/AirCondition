@@ -17,30 +17,18 @@
 <br/>
 <h2 class="form-signin-heading text-center">欢迎，酒店管理员</h2>
 	<div class="wrapper">
-		<form class="form-signin" name="info" action="setTemp" method="get">
-            <h4 class="form-signin-heading text-center">默认温度设置</h4>
-
-            <input type="text" class="form-control" name="tempreture" placeholder="输入默认温度">
-
-            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
-
-            <h6>{{ result_temp }}</h6>
-        </form>
-
-        <form class="form-signin" name="info" action="setPrice" method="get">
-            <h4 class="form-signin-heading text-center">计费参数设置</h4>
-
-            <input type="text" class="form-control" name="price" placeholder="输入计费参数">
-
-            <button type="submit" class="btn btn-lg btn-primary btn-block">设 置</button>
-
-            <h6>{{ result_price }}</h6>
-        </form>
-
-        <form class="form-signin" name="info" action="queryPost" method="get">
-            <h4 class="form-signin-heading text-center">查询报表</h4>
+		<form class="form-signin" name="info" action="register" method="get">
+            <h4 class="form-signin-heading text-center">录入客户信息</h4>
 
             <input type="text" class="form-control" name="room_number" placeholder="输入房间号">
+            <input type="text" class="form-control" name="user_id" placeholder="输入身份证号">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">录 入</button>
+            <h6>{{ result }}</h6>
+        </form>
+
+        <form class="form-signin" name="info" action="data" method="get">
+            <h4 class="form-signin-heading text-center">查询报表</h4>
 
             <button type="submit" class="btn btn-lg btn-primary btn-block">查 询</button>
         </form>

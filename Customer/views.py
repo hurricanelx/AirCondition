@@ -1,12 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 import random
 # Create your views here.
 
 
+# @login_required
 def welcome(request):
-    temp = random.random()
-    context = {'room_number': temp}
-    return render(request, 'CustomerWel.html', context)
+    user_name = request.session.get('user_name', False)
+    if user_name:
+        temp = random.random()
+        context = {'room_number': temp}
+        return render(request, 'CustomerWel.html', context)
 
 
 def editCon(request):

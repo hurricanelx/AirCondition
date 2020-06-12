@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -45,8 +46,10 @@ def setTemp(request):
     return render(request, 'HotelManagerWel.html', context)
 
 
+# @login_required
 def welcome(request):
-    return redirect(reverse("data"))
+    return render(request, 'HotelManagerWel.html')
+    # return redirect(reverse("data"))
     # return render(request, 'temp_hotel.html')
 
 
@@ -57,3 +60,12 @@ def data(request):
         page = request.GET.get('page')
         page = pag.get_page(page)
         return render(request, 'temp_hotel.html', {'u': page, 'name': 'temp'})
+
+
+def register(request):
+    user_id = request.GET['user_id']
+    room_number = request.GET['room_number']
+
+    print(user_id, room_number)
+    context = {'result': '录入成功'}
+    return render(request, 'HotelManagerWel.html', context)

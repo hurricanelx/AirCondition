@@ -3,6 +3,7 @@ from HotelManager import views
 
 
 urlpatterns = [
+    path('register', views.register),
     path('roomPost', views.roomPost),
     path('queryPost', views.queryPost),
     path('setPrice', views.setPrice),

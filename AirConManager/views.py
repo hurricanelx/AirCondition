@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,12 +11,16 @@ def editCon(request):
 
 
 def welcome(request):
+    user_name = request.session.get('user_name', False)
+    if user_name:
+        return render(request, 'AirConManagerWel.html')
 
-    return render(request, 'AirConManagerWel.html')
 
-
+# @login_required
 def set_(request):
-    return render(request, 'AirConManSet.html')
+    user_name = request.session.get('user_name', False)
+    if user_name:
+        return render(request, 'AirConManSet.html')
 
 
 def setPrice(request):

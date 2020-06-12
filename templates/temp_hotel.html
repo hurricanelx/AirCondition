@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
+
     .table11_6 table {
         width:100%;
         margin:15px 0;
@@ -34,6 +43,9 @@
     .table11_6 tr:nth-child(even){
         background-color:#ffffff;
     }
+    .nav{ text-align:center; }
+    .nav ul{ display:inline-block; height:15px; vertical-align:top;}
+    .nav ul li{display:inline-block; }
 </style>
 </head>
 <body>
@@ -56,11 +68,11 @@
     </table>
 
 
-<nav aria-label="Page navigation">
+<nav aria-label="Page navigation" style="text-align: center;">
   <ul class="pagination">
     <li {% if not u.has_previous %}class="disabled"{% endif %}>
       <a {% if u.has_previous %}href="{% url 'data' %}?page={{ u.previous_page_number }}"{% endif %} aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
+        &laquo;
       </a>
     </li>
 
@@ -70,7 +82,7 @@
 
     <li {% if not u.has_next %}class="disabled"{% endif %}>
       <a {% if u.has_next %}href="{% url 'data' %}?page={{ u.next_page_number }}"{% endif %} aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
+        &raquo;
       </a>
     </li>
   </ul>
